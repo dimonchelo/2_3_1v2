@@ -5,8 +5,18 @@
   <title>Cars</title>
 </head>
 <body>
-<div th:each="car : ${message}">
-  <a th:text="${car.getId()}"></a>
-</div>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Model</th>
+    <th>Series</th>
+  </tr>
+  <tr>
+  <tr th:each="car : ${message}">
+    <td th:utext="${car.getId()}"></td>
+    <td th:utext="${car.getModel()}"></td>
+    <td th:utext="${car.getSeries()}"></td>
+  </tr>
+</table>
 </body>
 </html>
