@@ -12,18 +12,14 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
-
     @Transactional
     @Override
     public void add(User user) {
-
         userDao.add(user);
     }
-
     @Transactional(readOnly = true)
     @Override
     public List<User> listUser() {
-
         return userDao.listUsers();
     }
     @Transactional

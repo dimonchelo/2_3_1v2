@@ -11,13 +11,8 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao{
-    List<User> users;
-    @Autowired
-    private SessionFactory sessionFactory;
-
     @PersistenceContext
     private EntityManager entityManager;
-
     @Override
     public void add(User user) {
         entityManager.persist(user);
@@ -42,8 +37,5 @@ public class UserDaoImpl implements UserDao{
     @Override
     public User show(int id) {
         return entityManager.find(User.class, id);
-//        TypedQuery<User> typedQuery  = sessionFactory.getCurrentSession().createQuery("from User user where user.id = :id");
-//        typedQuery.setParameter("id", id);
-//        return typedQuery.setMaxResults(1).getSingleResult();
     }
 }
