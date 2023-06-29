@@ -15,12 +15,12 @@ public class User {
     @Column(name = "id")
     private int id;
     @NotEmpty(message = "name empty" )
-    @Size(min = 2, max = 30, message = "name size")
+    @Size(min = 2, max = 30, message = "name size [2-30]")
     @Pattern(regexp = "[A-Za-z]+", message = "only A-Z , a-z")
     @Column(name = "name")
     private String name;
     @NotEmpty(message = "lastname empty" )
-    @Size(min = 2, max = 30, message = "lastname size")
+    @Size(min = 2, max = 30, message = "lastname size [2-30]")
     @Pattern(regexp = "[A-Za-z]+", message = "only A-Z , a-z")
     @Column(name = "lastName")
     private String lastName;
